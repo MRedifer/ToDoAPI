@@ -20,10 +20,10 @@
           <Property Name="Todoid" Type="int" Nullable="false" />
           <Property Name="Action" Type="nvarchar(max)" Nullable="false" />
           <Property Name="Done" Type="bit" Nullable="false" />
-          <Property Name="Categoryid" Type="int" />
+          <Property Name="Categoryid" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_ToDoItems_Categories">
-          <End Role="Categories" Type="Self.Categories" Multiplicity="0..1" />
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
           <End Role="ToDoItems" Type="Self.ToDoItems" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categories">
@@ -63,11 +63,11 @@
           <Property Name="Todoid" Type="Int32" Nullable="false" />
           <Property Name="Action" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Done" Type="Boolean" Nullable="false" />
-          <Property Name="Categoryid" Type="Int32" />
+          <Property Name="Categoryid" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Category" Relationship="Self.FK_ToDoItems_Categories" FromRole="ToDoItems" ToRole="Categories" />
         </EntityType>
         <Association Name="FK_ToDoItems_Categories">
-          <End Role="Categories" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Categories" Type="Self.Category" Multiplicity="1" />
           <End Role="ToDoItems" Type="Self.ToDoItem" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Categories">

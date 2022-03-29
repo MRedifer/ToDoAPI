@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C45BC866-6843-467F-AEB5-AB27CCC2888D}</ProjectGuid>
+    <ProjectGuid>{6475F4AD-36A7-42E1-8111-F0F7994E3811}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ToDoAPI.DATA.EF</RootNamespace>
@@ -51,51 +51,51 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs">
-      <DependentUpon>ToDoModel.tt</DependentUpon>
+      <DependentUpon>ToDoModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToDoItem.cs">
-      <DependentUpon>ToDoModel.tt</DependentUpon>
+      <DependentUpon>ToDoModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="ToDoModel.Context.cs">
+    <Compile Include="ToDoModels.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ToDoModel.Context.tt</DependentUpon>
+      <DependentUpon>ToDoModels.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ToDoModel.cs">
+    <Compile Include="ToDoModels.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ToDoModel.tt</DependentUpon>
+      <DependentUpon>ToDoModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="ToDoModel.Designer.cs">
+    <Compile Include="ToDoModels.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ToDoModel.edmx</DependentUpon>
+      <DependentUpon>ToDoModels.edmx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="ToDoModel.edmx">
+    <EntityDeploy Include="ToDoModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ToDoModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>ToDoModels.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
-    <None Include="ToDoModel.edmx.diagram">
-      <DependentUpon>ToDoModel.edmx</DependentUpon>
+    <None Include="ToDoModels.edmx.diagram">
+      <DependentUpon>ToDoModels.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ToDoModel.Context.tt">
+    <Content Include="ToDoModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ToDoModel.Context.cs</LastGenOutput>
-      <DependentUpon>ToDoModel.edmx</DependentUpon>
+      <LastGenOutput>ToDoModels.Context.cs</LastGenOutput>
+      <DependentUpon>ToDoModels.edmx</DependentUpon>
     </Content>
-    <Content Include="ToDoModel.tt">
+    <Content Include="ToDoModels.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ToDoModel.edmx</DependentUpon>
-      <LastGenOutput>ToDoModel.cs</LastGenOutput>
+      <DependentUpon>ToDoModels.edmx</DependentUpon>
+      <LastGenOutput>ToDoModels.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
