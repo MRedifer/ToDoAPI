@@ -16,19 +16,20 @@ namespace ToDoAPI.API.Controllers
         ToDoEntities db = new ToDoEntities();
         public IHttpActionResult GetToDos()
         {
-            List<ToDoViewModels> toDos = db.ToDoItems.Include("Categories").Select(t => new ToDoViewModels()
+            List<ToDoViewModel> toDos = db.ToDoItems.Include("Categories").Select(t => new ToDoViewModel()
             {
                 ToDoId = t.Todoid,
                 Action = t.Action,
                 Done = t.Done,
-                CategoryId = t.Categoryid,
+                CategoryId = t.CategoryId,
+                Description = t.Description,
                 Category = new CategoryViewModel()
                 {
-                    CategoryId = t.Categoryid,
+                    CategoryId = t.CategoryId,
                     CategoryName = t.Category.Name,
                     CategoryDescription = t.Category.Description
                 }
-            }).ToList<ToDoViewModels>();
+            }).ToList<ToDoViewModel>();
 
             if (toDos.Count == 0)
             {
@@ -39,16 +40,17 @@ namespace ToDoAPI.API.Controllers
 
         public IHttpActionResult GetToDos(int id)
         {
-            ToDoViewModels toDo = db.ToDoItems.Include("Categories").Where(t => t.Categoryid == id).Select(t => new ToDoViewModels()
+            ToDoViewModel toDo = db.ToDoItems.Include("Categories").Where(t => t.CategoryId == id).Select(t => new ToDoViewModel()
             {
-                
+
                 ToDoId = t.Todoid,
                 Action = t.Action,
                 Done = t.Done,
-                CategoryId = t.Categoryid,
+                CategoryId = t.CategoryId,
+                Description = t.Description,
                 Category = new CategoryViewModel()
                 {
-                    CategoryId = t.Categoryid,
+                    CategoryId = t.CategoryId,
                     CategoryName = t.Category.Name,
                     CategoryDescription = t.Category.Description
                 }
@@ -60,7 +62,7 @@ namespace ToDoAPI.API.Controllers
             return Ok(toDo);
         }//end GetToDos
 
-        public IHttpActionResult PostToDos(ToDoViewModels toDo)
+        public IHttpActionResult PostToDos(ToDoViewModel toDo)
         {
             if (!ModelState.IsValid)
             {
@@ -72,7 +74,8 @@ namespace ToDoAPI.API.Controllers
                 Todoid = toDo.ToDoId,
                 Action = toDo.Action,
                 Done = toDo.Done,
-                Categoryid = toDo.CategoryId
+                CategoryId = toDo.CategoryId,
+                Description = toDo.Description
             };
 
             //add the record and save changes
@@ -83,7 +86,7 @@ namespace ToDoAPI.API.Controllers
 
         }//end PostResource
 
-        public IHttpActionResult PutToDo(ToDoViewModels toDo)
+        public IHttpActionResult PutToDo(ToDoViewModel toDo)
         {
 
             if (!ModelState.IsValid)
@@ -100,7 +103,8 @@ namespace ToDoAPI.API.Controllers
                 existingResource.Todoid = toDo.ToDoId;
                 existingResource.Action = toDo.Action;
                 existingResource.Done = toDo.Done;
-                existingResource.Categoryid = toDo.CategoryId;
+                existingResource.CategoryId = toDo.CategoryId;
+                existingResource.Description = toDo.Description;
                 db.SaveChanges();
                 return Ok();
             }

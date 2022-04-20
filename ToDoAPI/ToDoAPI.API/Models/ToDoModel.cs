@@ -5,12 +5,13 @@ using System.Web;
 
 namespace ToDoAPI.API.Models
 {
-    public class ToDoViewModels
+    public class ToDoViewModel
     {
         public int ToDoId { get; set; }
         public string Action { get; set; }
         public bool Done { get; set; }
         public int CategoryId { get; set; }
+        public string Description { get; set; }
         public virtual CategoryViewModel Category { get; set; }
     }
 

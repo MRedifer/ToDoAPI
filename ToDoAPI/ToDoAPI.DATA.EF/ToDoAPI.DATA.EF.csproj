@@ -51,55 +51,54 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Category.cs">
-      <DependentUpon>ToDoModels.tt</DependentUpon>
+      <DependentUpon>ToDoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ToDoItem.cs">
-      <DependentUpon>ToDoModels.tt</DependentUpon>
+      <DependentUpon>ToDoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ToDoModels.Context.cs">
+    <Compile Include="ToDoModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ToDoModels.Context.tt</DependentUpon>
+      <DependentUpon>ToDoModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ToDoModels.cs">
+    <Compile Include="ToDoModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ToDoModels.tt</DependentUpon>
+      <DependentUpon>ToDoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ToDoModels.Designer.cs">
+    <Compile Include="ToDoModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ToDoModels.edmx</DependentUpon>
+      <DependentUpon>ToDoModel.edmx</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="ToDoModels.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ToDoModels.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
-    <None Include="ToDoModels.edmx.diagram">
-      <DependentUpon>ToDoModels.edmx</DependentUpon>
+    <EntityDeploy Include="ToDoModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ToDoModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ToDoModel.edmx.diagram">
+      <DependentUpon>ToDoModel.edmx</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="ToDoModels.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>ToDoModels.Context.cs</LastGenOutput>
-      <DependentUpon>ToDoModels.edmx</DependentUpon>
-    </Content>
-    <Content Include="ToDoModels.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>ToDoModels.edmx</DependentUpon>
-      <LastGenOutput>ToDoModels.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="ToDoModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ToDoModel.edmx</DependentUpon>
+      <LastGenOutput>ToDoModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="ToDoModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ToDoModel.edmx</DependentUpon>
+      <LastGenOutput>ToDoModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
